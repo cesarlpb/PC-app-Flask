@@ -25,7 +25,7 @@ table_values = f"(\"LAPTOP-{get_random_hash()}\",\"PC-model-{get_random_hash()}\
 def init():
     cursor.execute(f"CREATE TABLE IF NOT EXISTS {table_name} {table_definition}")
     cursor.execute(f"INSERT INTO {table_name} {table_columns} VALUES {table_values}")
-    return f"Table {table_name} created.\nWelcome to the API"
+    return jsonify({'status': 200, 'data': f"Table {table_name} created.\nWelcome to the API"})
 
 @app.route("/all")
 def get_all():
