@@ -30,4 +30,4 @@ python3 app.py
 - La ruta `/all` muestra todos los registros de la tabla.
 - La ruta `/get/id` inserta un registro en la tabla. El id es un número entero. Por ejemplo: [http://80.240.127.173:5000/get/1](http://80.240.127.173:5000/get/1)
 
-![Captura](/app/static/img/screenshots/screenshot.png)
+![Captura](/flask-app/static/img/screenshots/screenshot.png)
