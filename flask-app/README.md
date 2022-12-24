@@ -31,3 +31,10 @@ python3 app.py
 - La ruta `/get/id` inserta un registro en la tabla. El id es un número entero. Por ejemplo: [http://80.240.127.173:5000/get/1](http://80.240.127.173:5000/get/1)
 
 ![Captura](/flask-app/static/img/screenshots/screenshot.png)
+
+## PM2
+
+Para añadir el proceso a PM2:
+```
+pm2 start app.py --interpreter python3 --name PC-app-v1-ubuntu-5000
+```
