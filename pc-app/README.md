@@ -23,3 +23,17 @@ npm run dev -- --host
 
 - Local:   http://localhost:5173/
 - Network: http://80.240.127.173:5173/
+
+## React Router DOM v6
+
+- [React Router DOM v6](https://bobbyhadz.com/blog/react-get-current-url)
+
+## PM2
+`package.json` > `scripts` > `host`:
+```
+"host": "vite --host"
+```
+Para añadir a PM2:
+```
+pm2 --name vite-react start npm -- run host
+```
