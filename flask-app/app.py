@@ -1,9 +1,11 @@
 from flask import Flask, jsonify
 from flaskext.mysql import MySQL
+from flask_cors import CORS, cross_origin
 from utils import *
 
 app=Flask(__name__)
-
+cors = CORS(app)
+app.config['CORS_HEADERS'] = 'Content-Type'
 mysql = MySQL()
 
 app.config['MYSQL_DATABASE_USER'] = 'root'
@@ -22,6 +24,7 @@ table_columns = f"(device, model, img_path, description, category, subcategory, 
 table_values = f"(\"LAPTOP-{get_random_hash()}\",\"PC-model-{get_random_hash()}\",\"https://evatech.com.au/news/wp-content/uploads/2018/02/DSC_2592.jpg\",\"PC-{get_random_hash()} is a good PC\",\"PC-category\",\"PC-subcategory\",\"HP\",\"{get_random_int()}\",\"active\", 5)"
 
 @app.route("/")
+@cross_origin()
 def init():
     cursor.execute(f"CREATE TABLE IF NOT EXISTS {table_name} {table_definition}")
     cursor.execute(f"INSERT INTO {table_name} {table_columns} VALUES {table_values}")
